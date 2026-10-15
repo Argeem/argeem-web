@@ -1,0 +1,41 @@
+﻿name: Deploy to GCE
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.GCE_HOST }}
+          username: ${{ secrets.GCE_USER }}
+          key: ${{ secrets.GCE_SSH_KEY }}
+          script: |
+            set -e
+
+            echo "📦 Pulling latest code..."
+            cd ~/argeem-web
+            git pull origin main
+
+            echo "🔧 Installing dependencies..."
+            cd app
+            npm ci --omit=dev
+
+            echo "🏗️ Building Next.js app..."
+            npm run build
+
+            echo "🔄 Restarting PM2..."
+            pm2 restart argeem-web --update-env || pm2 start ~/argeem-web/app/ecosystem.config.js
+
+            pm2 save
+            echo "✅ Deploy complete!"
