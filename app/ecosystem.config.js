@@ -1,5 +1,5 @@
-# ecosystem.config.js
-# PM2 process manager configuration for argeem-web
+// ecosystem.config.js
+// PM2 process manager configuration for argeem-web
 
 module.exports = {
   apps: [
@@ -7,7 +7,7 @@ module.exports = {
       name: 'argeem-web',
       script: 'node_modules/.bin/next',
       args: 'start',
-      cwd: '/home/<YOUR_USER>/argeem-web/app',  // << แก้ <YOUR_USER> ให้ตรงกับ username ของคุณ
+      cwd: '/home/sitth/argeem-web/app',
       instances: 1,                             // e2-micro มี 1 vCPU ที่ใช้ได้จริง
       exec_mode: 'fork',
       watch: false,
@@ -16,8 +16,8 @@ module.exports = {
         PORT: 3000,
       },
       // Logging
-      out_file: '/home/<YOUR_USER>/logs/argeem-web-out.log',
-      error_file: '/home/<YOUR_USER>/logs/argeem-web-error.log',
+      out_file: '/home/sitth/logs/argeem-web-out.log',
+      error_file: '/home/sitth/logs/argeem-web-error.log',
       log_date_format: 'YYYY-MM-DD HH:mm:ss Z',
       merge_logs: true,
 
