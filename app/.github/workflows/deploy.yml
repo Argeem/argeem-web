@@ -1,0 +1,43 @@
+name: 🚀 Deploy to GCE
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:  # อนุญาตให้ trigger manual ได้
+
+jobs:
+  deploy:
+    name: Deploy to Google Compute Engine
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      - name: 🔑 Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.GCE_HOST }}
+          username: ${{ secrets.GCE_USER }}
+          key: ${{ secrets.GCE_SSH_KEY }}
+          port: 22
+          timeout: 60s
+          script_stop: true  # หยุดถ้า step ไหน error
+          script: |
+            echo "📦 Pulling latest code..."
+            cd ~/argeem-web
+            git pull origin main
+
+            echo "📚 Installing dependencies..."
+            cd app
+            npm ci --omit=dev
+
+            echo "🏗️ Building Next.js app..."
+            npm run build
+
+            echo "♻️ Restarting PM2 process..."
+            pm2 restart argeem-web --update-env
+
+            echo "✅ Deploy complete!"
+            pm2 status argeem-web

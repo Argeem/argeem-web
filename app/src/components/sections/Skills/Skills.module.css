@@ -1,0 +1,74 @@
+.section { background: var(--bg-surface); }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.groupTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--accent-1);
+}
+
+.bars { display: flex; flex-direction: column; gap: 16px; }
+
+.barItem { display: flex; flex-direction: column; gap: 6px; }
+
+.barMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skillName { font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); }
+.skillLevel { font-size: 0.75rem; font-weight: 600; color: var(--text-muted); font-family: var(--font-mono); }
+
+.barTrack {
+  width: 100%;
+  height: 6px;
+  background: var(--bg-elevated);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  width: var(--w, 0%);
+  background: var(--accent-grad);
+  border-radius: var(--radius-full);
+  animation: fillBar 1s ease-out both;
+}
+
+@keyframes fillBar {
+  from { width: 0; }
+  to   { width: var(--w); }
+}
+
+/* Icon cloud */
+.iconCloud {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.iconCloudLabel {
+  font-size: 0.8125rem;
+  color: var(--text-faint);
+  font-weight: 500;
+}
+
+.icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+@media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+@media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }

@@ -1,0 +1,303 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 68px; /* navbar height */
+}
+
+/* Blobs */
+.blob1 {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  top: -100px;
+  right: -200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(124,58,237,0.12) 0%, transparent 70%);
+  pointer-events: none;
+  animation: float 8s ease-in-out infinite;
+}
+
+.blob2 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  bottom: -50px;
+  left: -100px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(99,102,241,0.08) 0%, transparent 70%);
+  pointer-events: none;
+  animation: float 10s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-20px) scale(1.02); }
+}
+
+/* Layout */
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 80px;
+}
+
+/* Content */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  animation: slideInLeft 0.8s ease both;
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-32px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent-1);
+  background: linear-gradient(135deg, rgba(124,58,237,0.1), rgba(99,102,241,0.08));
+  border: 1px solid rgba(124,58,237,0.25);
+  border-radius: var(--radius-full);
+  padding: 6px 14px;
+  width: fit-content;
+}
+
+.heading {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.subHeading {
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.desc {
+  font-size: 1.0625rem;
+  color: var(--text-muted);
+  max-width: 480px;
+  line-height: 1.75;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  transition: all var(--transition);
+}
+.socialLink:hover {
+  color: var(--accent-1);
+  border-color: rgba(124,58,237,0.3);
+  background: rgba(124,58,237,0.06);
+  transform: translateY(-2px);
+}
+
+.socialDivider {
+  width: 1px;
+  height: 20px;
+  background: var(--border);
+  margin: 0 4px;
+}
+
+.socialText {
+  font-size: 0.75rem;
+  color: var(--text-faint);
+}
+
+/* Visual */
+.visual {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  animation: slideInRight 0.8s ease 0.15s both;
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(32px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Photo */
+.photoWrapper {
+  position: relative;
+  width: fit-content;
+}
+
+.photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: var(--accent-grad);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 4px var(--bg-base), 0 0 0 6px rgba(124,58,237,0.3);
+}
+
+.photoPlaceholder {
+  font-size: 3rem;
+  font-weight: 800;
+  color: white;
+}
+
+.floatingBadge {
+  position: absolute;
+  bottom: 4px;
+  right: -12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  padding: 5px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  box-shadow: var(--shadow-md);
+  white-space: nowrap;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(0.85); }
+}
+
+/* Code card */
+.codeCard {
+  width: 100%;
+  max-width: 420px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.codeHeader {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-surface);
+}
+
+.dot1, .dot2, .dot3 {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.dot1 { background: #ff5f57; }
+.dot2 { background: #ffbd2e; }
+.dot3 { background: #28c840; }
+
+.fileName {
+  margin-left: 8px;
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  color: var(--text-faint);
+}
+
+.code {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  padding: 20px 24px;
+  min-height: 180px;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+/* Scroll indicator */
+.scrollIndicator {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--border);
+  color: var(--text-muted);
+  transition: all var(--transition);
+  animation: bounce 2s ease-in-out infinite 1s;
+}
+.scrollIndicator:hover {
+  border-color: var(--accent-1);
+  color: var(--accent-1);
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(6px); }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    padding-top: 32px;
+  }
+  .visual {
+    order: -1;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .codeCard { max-width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .actions { flex-direction: column; }
+  .photo { width: 120px; height: 120px; }
+  .photoPlaceholder { font-size: 2.25rem; }
+}
