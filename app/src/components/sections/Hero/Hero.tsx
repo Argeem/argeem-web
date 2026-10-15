@@ -7,7 +7,7 @@ import { useApp } from "@/components/ThemeProvider/ThemeProvider";
 import styles from "./Hero.module.css";
 
 const SOCIALS = [
-  { href: "https://github.com/sitth",      icon: Github,   label: "GitHub" },
+  { href: "https://github.com/Argeem",      icon: Github,   label: "GitHub" },
   { href: "https://linkedin.com/in/sitth", icon: Linkedin, label: "LinkedIn" },
   { href: "mailto:hello@sitth.dev",        icon: Mail,     label: "Email" },
 ];

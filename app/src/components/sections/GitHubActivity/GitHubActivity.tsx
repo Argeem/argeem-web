@@ -70,7 +70,7 @@ export default function GitHubActivity() {
         {/* Pinned repos */}
         <div className={styles.repos}>
           {REPOS.map((repo) => (
-            <a key={repo.name} href={`https://github.com/sitth/${repo.name}`} target="_blank" rel="noopener noreferrer" className={`card ${styles.repo}`}>
+            <a key={repo.name} href={`https://github.com/Argeem/${repo.name}`} target="_blank" rel="noopener noreferrer" className={`card ${styles.repo}`}>
               <div className={styles.repoHeader}>
                 <GitCommit size={15} className={styles.repoIcon} />
                 <span className={styles.repoName}>sitth / {repo.name}</span>

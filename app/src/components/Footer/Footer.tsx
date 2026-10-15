@@ -7,7 +7,7 @@ import { useApp } from "@/components/ThemeProvider/ThemeProvider";
 import styles from "./Footer.module.css";
 
 const SOCIALS = [
-  { href: "https://github.com/sitth", label: "GitHub", icon: Github },
+  { href: "https://github.com/Argeem", label: "GitHub", icon: Github },
   { href: "https://linkedin.com/in/sitth", label: "LinkedIn", icon: Linkedin },
   { href: "mailto:hello@sitth.dev", label: "Email", icon: Mail },
 ];

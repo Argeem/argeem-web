@@ -11,7 +11,7 @@ const PROJECTS = [
     desc_en: "A full-stack e-commerce app with real-time inventory, Stripe payments, and an admin dashboard.",
     desc_th: "แอป e-commerce แบบ full-stack พร้อม inventory real-time, ชำระเงินด้วย Stripe และ admin dashboard",
     tags: ["Next.js", "TypeScript", "PostgreSQL", "Stripe"],
-    github: "https://github.com/sitth",
+    github: "https://github.com/Argeem",
     live: "#",
     featured: true,
   },
@@ -20,7 +20,7 @@ const PROJECTS = [
     desc_en: "A markdown-based blog engine with syntax highlighting, search, and RSS feed.",
     desc_th: "Blog engine ที่ใช้ Markdown พร้อม syntax highlighting, ค้นหา, และ RSS feed",
     tags: ["Next.js", "MDX", "TypeScript"],
-    github: "https://github.com/sitth",
+    github: "https://github.com/Argeem",
     live: "#",
     featured: true,
   },
@@ -29,7 +29,7 @@ const PROJECTS = [
     desc_en: "RESTful API for task management with JWT auth, rate limiting, and OpenAPI docs.",
     desc_th: "RESTful API สำหรับจัดการงาน พร้อม JWT auth, rate limiting และเอกสาร OpenAPI",
     tags: ["Node.js", "Express", "PostgreSQL", "Docker"],
-    github: "https://github.com/sitth",
+    github: "https://github.com/Argeem",
     live: undefined,
     featured: false,
   },
@@ -92,7 +92,7 @@ export default function Projects() {
         </div>
 
         <div className={styles.footer}>
-          <a href="https://github.com/sitth" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+          <a href="https://github.com/Argeem" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
             {lang === "en" ? "View all on GitHub" : "ดูทั้งหมดบน GitHub"}
             <ArrowRight size={16} />
           </a>

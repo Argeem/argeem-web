@@ -102,7 +102,7 @@ export default function Contact() {
                 <p className={styles.socialTitle}>{lang === "en" ? "Find me on" : "ติดตามผมได้ที่"}</p>
                 <div className={styles.socialLinks}>
                   <a
-                    href="https://github.com/sitth"
+                    href="https://github.com/Argeem"
                     target="_blank"
                     rel="noopener noreferrer"
                     className={styles.socialBtn}
