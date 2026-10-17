@@ -1,23 +1,26 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import { ArrowDown, Mail, Sparkles } from "lucide-react";
 import { Github, Linkedin } from "@/components/Icons";
 import { useApp } from "@/components/ThemeProvider/ThemeProvider";
 import styles from "./Hero.module.css";
 
 const SOCIALS = [
-  { href: "https://github.com/Argeem",      icon: Github,   label: "GitHub" },
-  { href: "https://linkedin.com/in/sitth", icon: Linkedin, label: "LinkedIn" },
-  { href: "mailto:hello@sitth.dev",        icon: Mail,     label: "Email" },
+  { href: "https://github.com/Argeem",             icon: Github,   label: "GitHub" },
+  { href: "https://linkedin.com/in/sitth",        icon: Linkedin, label: "LinkedIn" },
+  { href: "mailto:sitthisakbannob@gmail.com",      icon: Mail,     label: "Email" },
 ];
 
 const CODE_SNIPPET = `const sitth = {
-  role: "Full-Stack Developer",
-  stack: ["Next.js", "TypeScript",
-          "Node.js", "GCP"],
-  passion: "Building great UX",
-  available: true, // hire me!
+  name: "Sittisak Bannob",
+  role: "Back End Developer",
+  experience: "3+ years",
+  stack: ["Golang", "NestJS", "TypeScript",
+          "PostgreSQL", "Docker", "Clean Arch"],
+  passion: "High-performance systems",
+  available: true,
 };`;
 
 export default function Hero() {
@@ -48,26 +51,26 @@ export default function Hero() {
         <div className={styles.content}>
           <div className={styles.badge}>
             <Sparkles size={12} />
-            {lang === "en" ? "Available for opportunities" : "รับงาน Freelance / Full-time"}
+            {lang === "en" ? "Available for opportunities" : "พร้อมรับโอกาสการทำงานใหม่"}
           </div>
 
           <h1 className={styles.heading}>
             {lang === "en" ? (
               <>
                 Hi, I&apos;m{" "}
-                <span className="gradient-text">sitth</span>
+                <span className="gradient-text">Sittisak</span>
                 <br />
                 <span className={styles.subHeading}>
-                  Full-Stack<br />Developer
+                  Back End<br />Developer
                 </span>
               </>
             ) : (
               <>
                 สวัสดี ผม{" "}
-                <span className="gradient-text">sitth</span>
+                <span className="gradient-text">สิทธิศักดิ์</span>
                 <br />
                 <span className={styles.subHeading}>
-                  นักพัฒนา<br />Full-Stack
+                  นักพัฒนา<br />Back End
                 </span>
               </>
             )}
@@ -75,8 +78,8 @@ export default function Hero() {
 
           <p className={styles.desc}>
             {lang === "en"
-              ? "I build clean, performant web applications with modern technologies. Passionate about developer experience and pixel-perfect UIs."
-              : "สร้าง web application ที่สะอาด, รวดเร็ว ด้วยเทคโนโลยีสมัยใหม่ ชอบ developer experience และ UI ที่ดูดีทุก pixel"}
+              ? "Back End Developer with 3 years of experience delivering robust business value. Specialized in Clean Architecture, procurement & billing systems, hybrid databases, and scalable cloud solutions."
+              : "นักพัฒนา Back End ประสบการณ์ 3 ปี มุ่งเน้นการสร้างคุณค่าทางธุรกิจด้วยเทคโนโลยี เชี่ยวชาญ Clean Architecture, ระบบสัญญาและวางบิลระดับองค์กร, ฐานข้อมูล Hybrid และ Cloud Services"}
           </p>
 
           <div className={styles.actions}>
@@ -113,13 +116,20 @@ export default function Hero() {
         <div className={styles.visual}>
           {/* Profile photo */}
           <div className={styles.photoWrapper}>
-            <div className={styles.photo} aria-label="Profile photo">
-              <span className={styles.photoPlaceholder}>S</span>
+            <div className={styles.photo} aria-label="Profile photo of Sittisak Bannob">
+              <Image
+                src="/profile.jpg"
+                alt="Sittisak Bannob"
+                width={160}
+                height={160}
+                className={styles.photoImg}
+                priority
+              />
             </div>
             {/* Floating badge */}
             <div className={styles.floatingBadge}>
               <span className={styles.dot} />
-              {lang === "en" ? "Open to work" : "รับงาน"}
+              {lang === "en" ? "Open to work" : "พร้อมร่วมงาน"}
             </div>
           </div>
 

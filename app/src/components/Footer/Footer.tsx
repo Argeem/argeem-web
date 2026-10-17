@@ -9,13 +9,14 @@ import styles from "./Footer.module.css";
 const SOCIALS = [
   { href: "https://github.com/Argeem", label: "GitHub", icon: Github },
   { href: "https://linkedin.com/in/sitth", label: "LinkedIn", icon: Linkedin },
-  { href: "mailto:hello@sitth.dev", label: "Email", icon: Mail },
+  { href: "mailto:sitthisakbannob@gmail.com", label: "Email", icon: Mail },
 ];
 
 const LINKS = [
   { href: "#about",    en: "About",    th: "เกี่ยวกับ" },
+  { href: "#skills",   en: "Skills",   th: "ทักษะ" },
   { href: "#projects", en: "Projects", th: "ผลงาน" },
-  { href: "#blog",     en: "Blog",     th: "บทความ" },
+  { href: "#resume",   en: "Resume",   th: "ประวัติ" },
   { href: "#contact",  en: "Contact",  th: "ติดต่อ" },
 ];
 
@@ -38,8 +39,8 @@ export default function Footer() {
           </div>
           <p className={styles.tagline}>
             {lang === "en"
-              ? "Building things for the web."
-              : "สร้างสิ่งดีๆ บนโลกอินเทอร์เน็ต"}
+              ? "Delivering business value through scalable backend engineering."
+              : "สร้างคุณค่าทางธุรกิจด้วยวิศวกรรมระบบ Backend ที่ยั่งยืนและมีประสิทธิภาพ"}
           </p>
           <div className={styles.socials}>
             {SOCIALS.map(({ href, label, icon: Icon }) => (
@@ -77,14 +78,14 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className={`container ${styles.bottom}`}>
         <p>
-          © {year} sitth.{" "}
+          © {year} Sittisak Bannob (sitth).{" "}
           {lang === "en"
             ? "Built with"
             : "สร้างด้วย"}{" "}
           <Heart size={12} className={styles.heart} />{" "}
           {lang === "en" ? "and Next.js" : "และ Next.js"}
         </p>
-        <p className={styles.stack}>Next.js · TypeScript · GCP</p>
+        <p className={styles.stack}>Golang · NestJS · TypeScript · Clean Architecture</p>
       </div>
     </footer>
   );

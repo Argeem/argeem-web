@@ -5,20 +5,20 @@ import Footer from "@/components/Footer/Footer";
 import ThemeProvider from "@/components/ThemeProvider/ThemeProvider";
 
 export const metadata: Metadata = {
-  title: "sitth — Developer & Engineer",
-  description: "Personal website of sitth — Full-stack developer passionate about building clean, performant web applications.",
-  keywords: ["developer", "engineer", "portfolio", "full-stack", "react", "nextjs"],
-  authors: [{ name: "sitth" }],
+  title: "Sittisak Bannob (sitth) — Back End Developer",
+  description: "Personal website & portfolio of Sittisak Bannob (sitth) — Back End Developer specializing in Golang, NestJS, Clean Architecture, and enterprise cloud solutions.",
+  keywords: ["Sittisak Bannob", "sitth", "Back End Developer", "Backend Developer", "Golang", "NestJS", "TypeScript", "Clean Architecture", "Software Engineer", "Portfolio"],
+  authors: [{ name: "Sittisak Bannob" }],
   openGraph: {
-    title: "sitth — Developer & Engineer",
-    description: "Full-stack developer passionate about building clean, performant web applications.",
+    title: "Sittisak Bannob (sitth) — Back End Developer",
+    description: "Back End Developer with 3 years of experience specializing in Clean Architecture, procurement systems, and scalable backend infrastructure.",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "sitth — Developer & Engineer",
-    description: "Full-stack developer passionate about building clean, performant web applications.",
+    title: "Sittisak Bannob (sitth) — Back End Developer",
+    description: "Back End Developer with 3 years of experience specializing in Clean Architecture, procurement systems, and scalable backend infrastructure.",
   },
 };
 
