@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useApp } from "@/components/ThemeProvider/ThemeProvider";
-import { MapPin, Calendar, Server } from "lucide-react";
+import { MapPin, Calendar, Server, User } from "lucide-react";
 import styles from "./About.module.css";
 
 const STATS = [
@@ -17,17 +17,22 @@ export default function About() {
   return (
     <section className="section" id="about" aria-labelledby="about-title">
       <div className="container">
+        {/* Centered Section Header */}
+        <div className="section-header">
+          <span className="section-label">
+            <User size={14} style={{ display: "inline", verticalAlign: "middle", marginRight: 6 }} />
+            {lang === "en" ? "About Me" : "เกี่ยวกับผม"}
+          </span>
+          <h2 id="about-title" className="section-title">
+            {lang === "en"
+              ? "Delivering business value through robust architecture"
+              : "สร้างคุณค่าทางธุรกิจด้วยซอฟต์แวร์และสถาปัตยกรรมที่มั่นคง"}
+          </h2>
+        </div>
+
         <div className={styles.grid}>
-          {/* Text */}
+          {/* Left Column: Bio & Stats */}
           <div className={styles.content}>
-            <span className="section-label">
-              {lang === "en" ? "About Me" : "เกี่ยวกับผม"}
-            </span>
-            <h2 id="about-title" className={styles.title}>
-              {lang === "en"
-                ? "Delivering business value through robust architecture"
-                : "สร้างคุณค่าทางธุรกิจด้วยซอฟต์แวร์และสถาปัตยกรรมที่มั่นคง"}
-            </h2>
             <div className={styles.bio}>
               <p>
                 {lang === "en"
@@ -39,20 +44,14 @@ export default function About() {
                   ? "Dedicated to collaborative teamwork and bridging the gap between business requirements and technical execution. An advocate of Clean Architecture, automated testing, and standardized best practices — actively leading hackathon initiatives and technical DOJO knowledge-sharing sessions."
                   : "มุ่งเน้นการเชื่อมโยงความต้องการทางธุรกิจสู่การพัฒนาซอฟต์แวร์จริงที่เสถียรและยั่งยืน ยึดมั่นในหลัก Clean Architecture, Automated Testing และการพัฒนาอย่างต่อเนื่องผ่านการนำทีม Special Projects (Internal Hackathon) 2 ปีซ้อน และจัด Session ถ่ายทอดความรู้ (DOJO)"}
               </p>
+              <p>
+                {lang === "en"
+                  ? "Always eager to master modern technologies, optimize database queries, and architect resilient services that empower teams and delight stakeholders."
+                  : "พร้อมเปิดรับและเรียนรู้เทคโนโลยีใหม่ๆ อยู่เสมอ ใส่ใจในประสิทธิภาพของฐานข้อมูล และการออกแบบระบบที่ยืดหยุ่น รองรับการเติบโตขององค์กร"}
+              </p>
             </div>
-          </div>
 
-          {/* Stats + image */}
-          <div className={styles.side}>
-            <div className={styles.photoCard}>
-              <Image
-                src="/profile.jpg"
-                alt="Sittisak Bannob profile"
-                width={400}
-                height={300}
-                className={styles.photoImg}
-              />
-            </div>
+            {/* Stats row on the left */}
             <div className={styles.stats}>
               {STATS.map(({ icon: Icon, en, th, label_en, label_th }) => (
                 <div key={label_en} className={styles.stat}>
@@ -63,6 +62,21 @@ export default function About() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+
+          {/* Right Column: Frameless, Enlarged Profile Photo */}
+          <div className={styles.photoColumn}>
+            <div className={styles.photoWrapper}>
+              <div className={styles.ambientGlow} aria-hidden="true" />
+              <Image
+                src="/profile-about.png"
+                alt="Sittisak Bannob profile"
+                width={360}
+                height={520}
+                className={styles.profileImg}
+                priority
+              />
             </div>
           </div>
         </div>
